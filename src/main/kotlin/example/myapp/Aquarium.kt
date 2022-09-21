@@ -17,5 +17,10 @@ class Aquarium(length: Int = 100, width: Int = 20, height: Int = 40) {
         // 1 liter = 1000 cm^3
         println("Volume: ${width * length * height / 1000} liters")
     }
+    constructor(numberOfFish: Int) : this() {
+        // 2,000 cm^3 per fish + extra room so water doesn't spill
+        val tank = numberOfFish * 2000 * 1.1
+        height = (tank / (length * width)).toInt()
+    }
 }
 
